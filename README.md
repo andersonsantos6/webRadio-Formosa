@@ -5,11 +5,11 @@
 Este é um projeto pessoal com fins educacionais, o mesmo foi desenvolvido com objetivo praticar e expandir conceitos relacionados a tecnologia.
 </p>
 
-<h2>Tecnologias</h2>
+<h2>⚙️ Tecnologias</h2>
 <p>
 <ul>
-<li> </i>
-<li></li>
-<li></li>
+<li>Flutter</li>
+<li>Dart</li>
+<li>ZenoMedia (Serviço de Stremaing)</li>
 </ul>
 </p>
