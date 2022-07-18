@@ -15,7 +15,7 @@ Este é um projeto pessoal com fins educacionais, o mesmo foi desenvolvido com o
 </p>
 <h2>▶️ Funcionamento</h2>
 <ul>
-<li>Inicialmente, foi configurado um serviço de broadcaster por meio da plataforma ZenoMedia- https://tools.zeno.fm/, onde o mesmo fornece dados do servidor para vinculação de softwares.
+<li>Inicialmente, foi configurado um serviço de broadcaster por meio da plataforma ZenoMedia- https://tools.zeno.fm/.
 </li>
 <br>
 <img src="https://user-images.githubusercontent.com/99498850/179574047-8bd10de0-a64b-4a69-8c06-4bf45a9a063e.PNG">
