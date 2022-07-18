@@ -10,7 +10,7 @@ Este é um projeto pessoal com fins educacionais, o mesmo foi desenvolvido com o
 <ul>
 <li>Flutter</li>
 <li>Dart</li>
-<li>ZenoMedia (Serviço de broadcaster)</li>
+<li>ZenoMedia (Serviço broadcaster)</li>
 </ul>
 </p>
 <h2>▶️ Funcionamento</h2>
