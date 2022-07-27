@@ -7,7 +7,6 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class CustomTile extends StatelessWidget {
-  late Color color;
   late String title;
   late String category;
   late String url;
@@ -17,13 +16,13 @@ class CustomTile extends StatelessWidget {
       {Key? key,
       required this.id,
       required this.url,
-      required this.color,
       required this.title,
       required this.category})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var color = Theme.of(context);
     AudioPlayerController _audioController =
         Provider.of<AudioPlayerController>(context);
     return Padding(
@@ -37,7 +36,10 @@ class CustomTile extends StatelessWidget {
           child: Stack(children: [
             Container(
               decoration: BoxDecoration(
-                  color: color, borderRadius: BorderRadius.circular(10)),
+                  color: _audioController.playerId == id
+                      ? color.accentColor
+                      : color.accentColor.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(10)),
             ),
             Positioned(
               top: 20,
@@ -45,6 +47,9 @@ class CustomTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     title,
                     style: const TextStyle(
@@ -62,7 +67,19 @@ class CustomTile extends StatelessWidget {
                 'lib/src/assets/eq.png',
                 fit: BoxFit.cover,
               ),
-            )
+            ),
+            Positioned(
+              height: 2,
+              left: 2,
+              child: Icon(
+                _audioController.playerId == id
+                    ? _audioController.isPlaying
+                        ? Icons.pause
+                        : Icons.play_circle
+                    : null,
+                color: color.primaryColor,
+              ),
+            ),
           ]),
         ),
       ),

@@ -17,11 +17,25 @@ class HomePage extends StatelessWidget {
     final _audioController = Provider.of<AudioPlayerController>(context);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: color.primaryColor,
+          elevation: 0,
+          actions: [
+            Container(
+                child: _audioController.buffering
+                    ? Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircularProgressIndicator(
+                          color: color.accentColor,
+                        ),
+                      )
+                    : null)
+          ],
+        ),
         backgroundColor: color.primaryColor,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('teste'),
             Expanded(
               flex: 1,
               child: GridView(
@@ -34,11 +48,9 @@ class HomePage extends StatelessWidget {
                       url: radio.url,
                       category: radio.category,
                       title: radio.name,
-                      color: color.accentColor,
                     );
                   }).toList()),
             ),
-            Text('teste')
           ],
         ),
       ),

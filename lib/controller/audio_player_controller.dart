@@ -1,4 +1,3 @@
-import 'package:audio_streaming/model/radio_model.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -32,10 +31,16 @@ class AudioPlayerController with ChangeNotifier {
     if (id != playerId || !isPlaying) {
       isPlaying = true;
       buffering = true;
-      _audioPlayer.play(url);
+      _audioPlayer.play(url).then((value) {
+        buffering = false;
+        notifyListeners();
+      });
       playerId = id;
-
       notifyListeners();
+      // Future.delayed(const Duration(seconds: 10)).then((value) {
+      //   buffering = false;
+      //   notifyListeners();
+      // });
     } else {
       _audioPlayer.stop();
       isPlaying = false;
